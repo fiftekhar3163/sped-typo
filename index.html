@@ -32,13 +32,27 @@
   </head>
   <body>
     <div class="container">
-      <h1>Fast Typing Game</h1>
+      <h1>SpeedTypo</h1>
       <div id="game-area">
-        <div id="timer">99</div>
-        <div id="word"></div>
-        <input type="text" id="user-input" autocomplete="off" />
+        <div id="timer">90</div>
+        <div id="word"><span class="hidden-text"> hidden-text </span></div>
+        <input
+          type="text"
+          id="user-input"
+          autocomplete="off"
+          placeholder="type your text here"
+        />
         <button id="start-btn">Start</button>
         <div id="score">Hits: 0</div>
+      </div>
+
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" id="closePopup">&times;</span>
+          <p id="popup-date">Date:</p>
+          <p id="popup-hits"></p>
+          <p id="popup-percentage"></p>
+        </div>
       </div>
     </div>
 

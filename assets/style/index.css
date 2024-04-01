@@ -1,8 +1,17 @@
 @charset "utf-8";
 
+:root {
+  --color-1: #186cb8;
+  --color-2: #2a9a9f;
+  --color-3: #f98d00;
+  --color-4: #e83611;
+  --color-5: #f1b211;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #141414;
+  color: #fff;
 }
 
 .container {
@@ -10,13 +19,47 @@ body {
   margin-top: 50px;
 }
 
+h1 {
+  /* margin: 2em; */
+  color: transparent;
+  /* text-shadow: 0px 0px 0px #7474748c; */
+  font-family: sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  text-align: center;
+  width: min-content;
+  margin: auto;
+  text-transform: uppercase;
+  background: linear-gradient(
+    220deg,
+    var(--color-1) 19%,
+    transparent 19%,
+    transparent 20%,
+    var(--color-2) 20%,
+    var(--color-2) 39%,
+    transparent 39%,
+    transparent 40%,
+    var(--color-3) 40%,
+    var(--color-3) 59%,
+    transparent 59%,
+    transparent 60%,
+    var(--color-4) 60%,
+    var(--color-4) 79%,
+    transparent 79%,
+    transparent 80%,
+    var(--color-5) 80%
+  );
+  -webkit-background-clip: text;
+}
+
 #game-area {
-  background-color: #fff;
+  background-color: #282828;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   max-width: 400px;
   margin: 0 auto;
+  color: #fff;
 }
 
 #word {
@@ -29,6 +72,8 @@ input[type="text"] {
   padding: 10px;
   font-size: 18px;
   margin-bottom: 20px;
+  background-color: #454545;
+  color: #fff;
 }
 
 #timer {
@@ -51,6 +96,37 @@ input[type="text"] {
   cursor: pointer;
 }
 
+.hidden-text {
+  visibility: hidden;
+}
+
 #start-btn:hover {
   background-color: #0056b3;
+}
+
+.popup {
+  display: none; /* Hide popup by default */
+  position: fixed; /* Position the popup relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 17, 17, 0.5); /* Semi-transparent background */
+  z-index: 999; /* Ensure the popup appears above other content */
+}
+
+.popup-content {
+  background-color: #413d3d;
+  max-width: 400px;
+  margin: 100px auto; /* Center the popup vertically and horizontally */
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
