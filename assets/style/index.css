@@ -16,11 +16,11 @@ body {
 
 .container {
   text-align: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 h1 {
-  /* margin: 2em; */
+  margin: 2em;
   color: transparent;
   /* text-shadow: 0px 0px 0px #7474748c; */
   font-family: sans-serif;
@@ -50,6 +50,11 @@ h1 {
     var(--color-5) 80%
   );
   -webkit-background-clip: text;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
 }
 
 #game-area {

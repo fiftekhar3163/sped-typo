@@ -128,16 +128,23 @@ const scoreDisplay = document.getElementById("score");
 const popup = document.getElementById("popup");
 const closeBtn = document.getElementById("closePopup");
 
-const popupDate = document.getElementById("popup-date")
-const popupHits = document.getElementById("popup-hits")
-const popupPercentage = document.getElementById("popup-percentage")
+const popupDate = document.getElementById("popup-date");
+const popupHits = document.getElementById("popup-hits");
+const popupPercentage = document.getElementById("popup-percentage");
 
-const htiSound = new Audio('./assets/audio/button-click.wav');
-const clickSound = new Audio('./assets/audio/ping-sound.mp3');
-const bgkSound = new Audio('./assets/audio/bg.wav');
+const buttonSound = new Audio("./assets/audio/button-click.wav");
+const pingSound = new Audio("./assets/audio/ping-sound.mp3");
+const backgroundSound = new Audio("./assets/audio/bg.wav");
 
 // Function to start the game
 function startGame() {
+
+  backgroundSound.loop = true;
+  backgroundSound.volume = 0.3;
+  setTimeout(function(){
+    backgroundSound.play();
+  },1000)
+  buttonSound.play();
   const max = 90;
   const min = 0;
   currentWordIndex = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -150,7 +157,7 @@ function startGame() {
     startBtn.textContent = "Playing...";
 
     // Start the timer
-    let seconds =5;
+    let seconds = 90;
     timer = setInterval(() => {
       seconds--;
       timerDisplay.textContent = seconds;
@@ -178,6 +185,7 @@ function checkInput() {
   const currentWord = words[currentWordIndex];
 
   if (typedWord === currentWord) {
+    pingSound.play();
     hits++;
     scoreDisplay.textContent = `Hits: ${hits}`;
     currentWordIndex++;
@@ -207,17 +215,15 @@ function endGame() {
   const date = new Date().toLocaleDateString();
   const score = new Score(date, hits, percentage);
 
-  popupDate.innerText=`Date: ${score.date}`;
-  popupHits.innerText=`Hits: ${score.hits}`;
-  popupPercentage.innerText=`Percentage: ${score.percentage}%`;
-
+  popupDate.innerText = `Date: ${score.date}`;
+  popupHits.innerText = `Hits: ${score.hits}`;
+  popupPercentage.innerText = `Percentage: ${score.percentage}%`;
 
   openPopup();
   // Reset game variables
   currentWordIndex = 0;
   hits = 0;
   scoreDisplay.textContent = "";
-
 }
 
 function openPopup() {
@@ -226,6 +232,7 @@ function openPopup() {
 
 // Function to close the popup
 function closePopup() {
+  window.location.reload();
   popup.style.display = "none"; // Hide the popup
 }
 
