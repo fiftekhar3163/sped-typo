@@ -20,11 +20,10 @@ body {
 }
 
 h1 {
-  margin: 2em;
   color: transparent;
   /* text-shadow: 0px 0px 0px #7474748c; */
   font-family: sans-serif;
-  font-size: 100px;
+  font-size: 45px;
   font-weight: 900;
   text-align: center;
   width: min-content;
@@ -53,7 +52,7 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 20px;
   margin-bottom: 30px;
 }
 
@@ -68,22 +67,25 @@ h2 {
 }
 
 #word {
-  font-size: 24px;
+  font-size: 50px;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 input[type="text"] {
   width: 100%;
   padding: 10px;
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: #454545;
   color: #fff;
 }
 
 #timer {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 50px;
+  margin-bottom: px;
+  font-weight: 700;
+  color: #cd4404;
 }
 
 #score {

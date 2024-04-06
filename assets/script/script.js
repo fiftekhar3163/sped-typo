@@ -157,7 +157,7 @@ function startGame() {
     startBtn.textContent = "Playing...";
 
     // Start the timer
-    let seconds = 99;
+    let seconds = 20;
     timer = setInterval(() => {
       seconds--;
       timerDisplay.textContent = seconds;
